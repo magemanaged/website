@@ -51,6 +51,10 @@
   margin: 0;
 }
 
+html {
+  padding: env(safe-area-inset);
+}
+
 body {
   position: relative;
 
@@ -73,6 +77,34 @@ body {
     position: relative;
     overflow: hidden;
     animation: hero_gradient 30s ease infinite;
+  }
+
+  .details {
+    height: 100vh;
+    background: rgb(127, 125, 169);
+    background: linear-gradient(
+      180deg,
+      rgba(127, 125, 169, 1) 0%,
+      rgb(32, 146, 168) 100%
+    );
+  }
+  .integrations {
+    scroll-snap-align: start;
+    height: 100vh;
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #1d6791 0%, #80d0c7 100%);
+  }
+  .download {
+    scroll-snap-align: start;
+    height: 100vh;
+    background-color: #97d9e1;
+    background-image: linear-gradient(0deg, #97d9e1 0%, #d9afd9 100%);
+  }
+  .demo {
+    scroll-snap-align: start;
+    height: 100vh;
+    background-color: #3eecac;
+    background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
   }
 }
 

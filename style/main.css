@@ -111,6 +111,10 @@
   margin: 0;
 }
 
+html {
+  padding: env(safe-area-inset);
+}
+
 body {
   position: relative;
 }
@@ -128,6 +132,35 @@ body .hero {
   overflow: hidden;
   -webkit-animation: hero_gradient 30s ease infinite;
           animation: hero_gradient 30s ease infinite;
+}
+
+body .details {
+  height: 100vh;
+  background: #7f7da9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7f7da9), to(#2092a8));
+  background: linear-gradient(180deg, #7f7da9 0%, #2092a8 100%);
+}
+
+body .integrations {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #1d6791 0%, #80d0c7 100%);
+}
+
+body .download {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: #97d9e1;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#97d9e1), to(#d9afd9));
+  background-image: linear-gradient(0deg, #97d9e1 0%, #d9afd9 100%);
+}
+
+body .demo {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: #3eecac;
+  background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
 }
 
 .block1 {
