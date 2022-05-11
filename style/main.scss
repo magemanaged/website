@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @keyframes block1_move {
   0% {
     background-position: 0% 50%;
@@ -49,6 +51,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Inter", Courier, monospace;
 }
 
 html {
@@ -57,10 +60,22 @@ html {
 
 body {
   position: relative;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
 
   nav {
+    backdrop-filter: blur(10px);
     .nav-brand {
       height: 2.2em;
+    }
+  }
+
+  .content {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    section {
+      scroll-snap-align: start;
     }
   }
 
@@ -77,34 +92,48 @@ body {
     position: relative;
     overflow: hidden;
     animation: hero_gradient 30s ease infinite;
+
+    section {
+      height: 100%;
+      width: 100%;
+      scroll-snap-align: start;
+    }
   }
 
-  .details {
+  #details {
     height: 100vh;
-    background: rgb(127, 125, 169);
+    background: rgb(38, 132, 186);
+    background: linear-gradient(180deg, rgba(38, 132, 186, 1) 0%, #482d9e 100%);
+  }
+  #integrations {
+    scroll-snap-align: start;
+    height: 100vh;
+    background: rgb(72, 45, 158);
     background: linear-gradient(
       180deg,
-      rgba(127, 125, 169, 1) 0%,
-      rgb(32, 146, 168) 100%
+      rgba(72, 45, 158, 1) 0%,
+      rgba(146, 58, 221, 1) 100%
     );
   }
-  .integrations {
+  #download {
     scroll-snap-align: start;
     height: 100vh;
-    background-color: #0093e9;
-    background-image: linear-gradient(160deg, #1d6791 0%, #80d0c7 100%);
+    background: rgb(146, 58, 221);
+    background: linear-gradient(
+      180deg,
+      rgba(146, 58, 221, 1) 0%,
+      rgba(58, 113, 221, 1) 100%
+    );
   }
-  .download {
+  #demo {
     scroll-snap-align: start;
     height: 100vh;
-    background-color: #97d9e1;
-    background-image: linear-gradient(0deg, #97d9e1 0%, #d9afd9 100%);
-  }
-  .demo {
-    scroll-snap-align: start;
-    height: 100vh;
-    background-color: #3eecac;
-    background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
+    background: rgb(58, 113, 221);
+    background: linear-gradient(
+      180deg,
+      rgba(58, 113, 221, 1) 0%,
+      rgba(104, 235, 236, 1) 100%
+    );
   }
 }
 
@@ -140,4 +169,12 @@ body {
   opacity: 25%;
   animation: block2_move 40s ease infinite;
   //mix-blend-mode: overlay;
+}
+
+.rnd-btn {
+  border-radius: 25px;
+}
+
+.mgc-color {
+  color: #4fc9d3;
 }
